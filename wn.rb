@@ -5,21 +5,21 @@
 class Wn < Formula
   desc "What's Next — local task/work item tracker"
   homepage "https://github.com/kjhaber/wn"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/wn/releases/download/v0.1.0/wn_0.1.0_darwin_amd64.tar.gz"
-      sha256 "afba175e8342b472cfbfc7cfe0f4da47060955598c2d8acdd8f437df5cba9a43"
+      url "https://github.com/kjhaber/wn/releases/download/v0.2.0/wn_0.2.0_darwin_amd64.tar.gz"
+      sha256 "b2cbcf488358f2bbf523842fb739f2fdceeeccf86ae8697fec740dabebf1504b"
 
       define_method(:install) do
         bin.install "wn"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/wn/releases/download/v0.1.0/wn_0.1.0_darwin_arm64.tar.gz"
-      sha256 "1bfd485682f46fb9c14c6bb1d679c375516d791a34b6ac05b277102fca52e5ed"
+      url "https://github.com/kjhaber/wn/releases/download/v0.2.0/wn_0.2.0_darwin_arm64.tar.gz"
+      sha256 "60718e82d114ee027b50ad13943842c5b4b0eb0c3bd58cac5cee17014de0ddd6"
 
       define_method(:install) do
         bin.install "wn"
@@ -29,15 +29,15 @@ class Wn < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.1.0/wn_0.1.0_linux_amd64.tar.gz"
-      sha256 "2e498c64bf685347b623d6006ec0789cf41f8b9150d1464d8d3064396b852455"
+      url "https://github.com/kjhaber/wn/releases/download/v0.2.0/wn_0.2.0_linux_amd64.tar.gz"
+      sha256 "848bff3290b707e0598899cf30c822fa61a4b45b12664176b6f5e8c449f7cde8"
       define_method(:install) do
         bin.install "wn"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.1.0/wn_0.1.0_linux_arm64.tar.gz"
-      sha256 "1a2e014a92822d8cc64a565800e2d48e34156d644ba25e349e2331b0236b0a97"
+      url "https://github.com/kjhaber/wn/releases/download/v0.2.0/wn_0.2.0_linux_arm64.tar.gz"
+      sha256 "0a41e5152a9dac9e54567b5407b3efdb89b519d16c5da2534fac3313f75fd7e0"
       define_method(:install) do
         bin.install "wn"
       end
