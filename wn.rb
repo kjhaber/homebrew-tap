@@ -5,41 +5,53 @@
 class Wn < Formula
   desc "What's Next — local task/work item tracker"
   homepage "https://github.com/kjhaber/wn"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/wn/releases/download/v0.4.0/wn_0.4.0_darwin_amd64.tar.gz"
-      sha256 "74f4f68308f7b73cb3bff03d41b6251cb9256ff23e7fffc86ce074da04f00557"
+      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_darwin_amd64.tar.gz"
+      sha256 "6fb0784f8ed7692b6701f82e43f1b4eac21d8424305c9a0d518b4796daf1cdab"
 
       define_method(:install) do
         bin.install "wn"
+        bash_completion.install "completions/wn.bash"
+        zsh_completion.install "completions/_wn"
+        fish_completion.install "completions/wn.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/wn/releases/download/v0.4.0/wn_0.4.0_darwin_arm64.tar.gz"
-      sha256 "9dac1865486c8110623f5276e46f881651a9a0e3859090def5829650e25097ca"
+      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_darwin_arm64.tar.gz"
+      sha256 "fefb82ecf0bac14af224cff190e53891a5b12ad2e0f092eba961762cbfdb544d"
 
       define_method(:install) do
         bin.install "wn"
+        bash_completion.install "completions/wn.bash"
+        zsh_completion.install "completions/_wn"
+        fish_completion.install "completions/wn.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.4.0/wn_0.4.0_linux_amd64.tar.gz"
-      sha256 "aed9ad9cedc462ab82789d1fd691d18f956eab8a2e19b741b535c6269cd2c8f3"
+      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_linux_amd64.tar.gz"
+      sha256 "eac5292ff95fcea176ff1fcaba5752d1ca9662653205ebd2ada0bd422538cb5f"
       define_method(:install) do
         bin.install "wn"
+        bash_completion.install "completions/wn.bash"
+        zsh_completion.install "completions/_wn"
+        fish_completion.install "completions/wn.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.4.0/wn_0.4.0_linux_arm64.tar.gz"
-      sha256 "2974518561926bf9667c307e257ba725618e7d5d6c0e1ba544980a96161eb29c"
+      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_linux_arm64.tar.gz"
+      sha256 "11f3827f16d6ba965ebad5736db45274495912076e2406c67209960a6eaea643"
       define_method(:install) do
         bin.install "wn"
+        bash_completion.install "completions/wn.bash"
+        zsh_completion.install "completions/_wn"
+        fish_completion.install "completions/wn.fish"
       end
     end
   end
