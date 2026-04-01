@@ -5,13 +5,13 @@
 class Wn < Formula
   desc "What's Next — local task/work item tracker"
   homepage "https://github.com/kjhaber/wn"
-  version "0.5.0"
+  version "0.6.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_darwin_amd64.tar.gz"
-      sha256 "6fb0784f8ed7692b6701f82e43f1b4eac21d8424305c9a0d518b4796daf1cdab"
+      url "https://github.com/kjhaber/wn/releases/download/v0.6.0/wn_0.6.0_darwin_amd64.tar.gz"
+      sha256 "b9dded443b77d48e9041b40d4f8c8753dc0b09d21ab3c240cfce6d31094ca518"
 
       define_method(:install) do
         bin.install "wn"
@@ -21,8 +21,8 @@ class Wn < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_darwin_arm64.tar.gz"
-      sha256 "fefb82ecf0bac14af224cff190e53891a5b12ad2e0f092eba961762cbfdb544d"
+      url "https://github.com/kjhaber/wn/releases/download/v0.6.0/wn_0.6.0_darwin_arm64.tar.gz"
+      sha256 "58e549828a19d7c72aa5b40cbf5566b0aa2637c251265cf2cb48d708fbe8077e"
 
       define_method(:install) do
         bin.install "wn"
@@ -35,8 +35,8 @@ class Wn < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_linux_amd64.tar.gz"
-      sha256 "eac5292ff95fcea176ff1fcaba5752d1ca9662653205ebd2ada0bd422538cb5f"
+      url "https://github.com/kjhaber/wn/releases/download/v0.6.0/wn_0.6.0_linux_amd64.tar.gz"
+      sha256 "a52986c0c737a5480c5346d6308bc2a0695787547e4d0cf495630b4ca539cafc"
       define_method(:install) do
         bin.install "wn"
         bash_completion.install "completions/wn.bash"
@@ -45,8 +45,8 @@ class Wn < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/wn/releases/download/v0.5.0/wn_0.5.0_linux_arm64.tar.gz"
-      sha256 "11f3827f16d6ba965ebad5736db45274495912076e2406c67209960a6eaea643"
+      url "https://github.com/kjhaber/wn/releases/download/v0.6.0/wn_0.6.0_linux_arm64.tar.gz"
+      sha256 "87a476fe28e368dab0eab32e7050eb44760152604b092d3539753905d1fc8290"
       define_method(:install) do
         bin.install "wn"
         bash_completion.install "completions/wn.bash"
