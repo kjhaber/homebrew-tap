@@ -1,8 +1,8 @@
 class ClaudeDevcon < Formula
   desc "Run Claude Code inside an isolated Docker container"
   homepage "https://github.com/kjhaber/claude-devcon"
-  url "https://github.com/kjhaber/claude-devcon/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  url "https://github.com/kjhaber/claude-devcon/archive/refs/tags/v0.1.2.tar.gz"
+  sha256 "9fd9716a6fe23cab61e34f89a5c5b6331d553444897d7e65305ad3f282c5e556"
   license "MIT"
 
   def install
