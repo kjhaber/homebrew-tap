@@ -1,8 +1,8 @@
 class Pen < Formula
   desc "Run coding harnesses (Claude Code, etc.) inside isolated Docker containers"
   homepage "https://github.com/kjhaber/pen"
-  url "https://github.com/kjhaber/pen/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "8f647ea1956ad86a63e5e006ea8a5adb1029c5fb510ad69b9aa578f1d3dc7b66"
+  url "https://github.com/kjhaber/pen/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "99ac83c17fe6904ce6eec85aaf6d8fa93aa30d06fadacf9228b17ddc0c267136"
   license "MIT"
 
   def install
