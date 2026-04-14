@@ -5,21 +5,21 @@
 class Tzc < Formula
   desc "Timezone converter TUI for the terminal"
   homepage "https://github.com/kjhaber/tzc"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/tzc/releases/download/v0.1.0/tzc_0.1.0_darwin_amd64.tar.gz"
-      sha256 "cb087f85c3a735c6d31e10457686620f8e72d9f99d84cf01474c235707f77e76"
+      url "https://github.com/kjhaber/tzc/releases/download/v0.1.1/tzc_0.1.1_darwin_amd64.tar.gz"
+      sha256 "7c2cfcd3cd6e99707b7f92936022582187008db6931e7d4fbd67e8b5fd2c3bd2"
 
       define_method(:install) do
         bin.install "tzc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/tzc/releases/download/v0.1.0/tzc_0.1.0_darwin_arm64.tar.gz"
-      sha256 "95ff46d6cbecb8163329b82dfc8e609cbf0d428c8232152799792624a4ddd1b8"
+      url "https://github.com/kjhaber/tzc/releases/download/v0.1.1/tzc_0.1.1_darwin_arm64.tar.gz"
+      sha256 "506e7f362c1e6d38d52d276ebb0860d325d7014b42a81ab301e470801b28bbc3"
 
       define_method(:install) do
         bin.install "tzc"
@@ -29,15 +29,15 @@ class Tzc < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/tzc/releases/download/v0.1.0/tzc_0.1.0_linux_amd64.tar.gz"
-      sha256 "50af8f0bbe67e465fca8b39270b8cc03c43dc6e83f3b850965767bdfd3fa0bbc"
+      url "https://github.com/kjhaber/tzc/releases/download/v0.1.1/tzc_0.1.1_linux_amd64.tar.gz"
+      sha256 "9ee1f94382b3b6582d6f8558933d36bf930f67e0c78b7326a5c56352585adac5"
       define_method(:install) do
         bin.install "tzc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/tzc/releases/download/v0.1.0/tzc_0.1.0_linux_arm64.tar.gz"
-      sha256 "b17145f6f6b48f514320413c9f04fc8628ca33f82f72d6cb94b86c83c5d79509"
+      url "https://github.com/kjhaber/tzc/releases/download/v0.1.1/tzc_0.1.1_linux_arm64.tar.gz"
+      sha256 "c208ca019f3ba88b8e0bc3ca4dba3a8f294230c14a686370925eaae25659434e"
       define_method(:install) do
         bin.install "tzc"
       end
