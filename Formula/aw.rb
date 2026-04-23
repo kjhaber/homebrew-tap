@@ -5,21 +5,21 @@
 class Aw < Formula
   desc "Monitor coding agents across tmux sessions"
   homepage "https://github.com/kjhaber/aw"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.0/aw_0.1.0_darwin_amd64.tar.gz"
-      sha256 "8e02c30915a742fd46c26afa43c468eaca9e82c18c673e98f71f9fe279eb4ba7"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.1/aw_0.1.1_darwin_amd64.tar.gz"
+      sha256 "5816f8f175d6ad58d1ab95f52e6c95e7210671ef970276d18f9fd14a09330d43"
 
       define_method(:install) do
         bin.install "aw"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.0/aw_0.1.0_darwin_arm64.tar.gz"
-      sha256 "c6693e24839d0cd1e069aa9990c748c8fcb5f52d6309b2e26b192994d060758b"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.1/aw_0.1.1_darwin_arm64.tar.gz"
+      sha256 "8ec1cf1b848eb7b32f97a306a2ce7a5f3ac2ba76b645a3972595c2f2991f3bad"
 
       define_method(:install) do
         bin.install "aw"
@@ -29,15 +29,15 @@ class Aw < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.0/aw_0.1.0_linux_amd64.tar.gz"
-      sha256 "31a129658d9a5e567fa0f567d5a4aad777ff43a4f83ad394c2df7c302a3e1a64"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.1/aw_0.1.1_linux_amd64.tar.gz"
+      sha256 "a8a759ad916ce7536dc5bec9c16c7cd12a091bb08348d8faecc03dea4b6beae0"
       define_method(:install) do
         bin.install "aw"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.0/aw_0.1.0_linux_arm64.tar.gz"
-      sha256 "28dda5e93d1255b022482ae2d080f84bc680bdaeb2c870e1aecd05e53f370845"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.1/aw_0.1.1_linux_arm64.tar.gz"
+      sha256 "1879fa47fa42535b146f9d85054b4c848f6bdda7fdf708c5767f11c115e2d4a4"
       define_method(:install) do
         bin.install "aw"
       end
