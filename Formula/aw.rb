@@ -15,9 +15,9 @@ class Aw < Formula
 
       define_method(:install) do
         bin.install "aw"
-        bash_completion.install Utils.safe_popen_read(bin/"aw", "completion", "bash") => "aw"
-        zsh_completion.install Utils.safe_popen_read(bin/"aw", "completion", "zsh") => "_aw"
-        fish_completion.install Utils.safe_popen_read(bin/"aw", "completion", "fish") => "aw.fish"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
       end
     end
     if Hardware::CPU.arm?
@@ -26,9 +26,9 @@ class Aw < Formula
 
       define_method(:install) do
         bin.install "aw"
-        bash_completion.install Utils.safe_popen_read(bin/"aw", "completion", "bash") => "aw"
-        zsh_completion.install Utils.safe_popen_read(bin/"aw", "completion", "zsh") => "_aw"
-        fish_completion.install Utils.safe_popen_read(bin/"aw", "completion", "fish") => "aw.fish"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
       end
     end
   end
@@ -39,9 +39,9 @@ class Aw < Formula
       sha256 "1b4f88ad760d070d4fad17a69c6ba2536606ec96ea02a2ed9ec0c268a6aed966"
       define_method(:install) do
         bin.install "aw"
-        bash_completion.install Utils.safe_popen_read(bin/"aw", "completion", "bash") => "aw"
-        zsh_completion.install Utils.safe_popen_read(bin/"aw", "completion", "zsh") => "_aw"
-        fish_completion.install Utils.safe_popen_read(bin/"aw", "completion", "fish") => "aw.fish"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
@@ -49,9 +49,9 @@ class Aw < Formula
       sha256 "3b9ad39880c4bf262056b7acf919d54876afc238f65e2a6768715de51d70e3a4"
       define_method(:install) do
         bin.install "aw"
-        bash_completion.install Utils.safe_popen_read(bin/"aw", "completion", "bash") => "aw"
-        zsh_completion.install Utils.safe_popen_read(bin/"aw", "completion", "zsh") => "_aw"
-        fish_completion.install Utils.safe_popen_read(bin/"aw", "completion", "fish") => "aw.fish"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
       end
     end
   end
