@@ -32,9 +32,7 @@ class Aw < Formula
 
   def install
     bin.install "aw"
-    (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-    (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-    (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+    generate_completions_from_executable(bin/"aw", "completion")
   end
 
   test do
