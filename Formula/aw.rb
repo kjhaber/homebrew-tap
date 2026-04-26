@@ -12,24 +12,10 @@ class Aw < Formula
     if Hardware::CPU.intel?
       url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_darwin_amd64.tar.gz"
       sha256 "15a5db6cd81386974977d08f30b9f979dbcb1f76ea10aa47b27f41bcb41ae85d"
-
-      define_method(:install) do
-        bin.install "aw"
-        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
-      end
     end
     if Hardware::CPU.arm?
       url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_darwin_arm64.tar.gz"
       sha256 "50dc06d34518c794cb780f13ab66455613b3d3628a6d2fafb774dc0747fe88f8"
-
-      define_method(:install) do
-        bin.install "aw"
-        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
-      end
     end
   end
 
@@ -37,23 +23,18 @@ class Aw < Formula
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_linux_amd64.tar.gz"
       sha256 "6aaf82a57f2815b02e89c582f4ee1232deb4072745e5661a06a49fda1dde7c7e"
-      define_method(:install) do
-        bin.install "aw"
-        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
-      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_linux_arm64.tar.gz"
       sha256 "98022fb9a933c284ded34ac5db8975c4455bde431834db742684ea196ee1a45f"
-      define_method(:install) do
-        bin.install "aw"
-        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
-      end
     end
+  end
+
+  def install
+    bin.install "aw"
+    (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+    (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+    (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
   end
 
   test do
