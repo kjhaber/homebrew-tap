@@ -32,9 +32,9 @@ class Aw < Formula
 
   def install
     bin.install "aw"
-    (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
-    (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
-    (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+    (bash_completion/"aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "bash")
+    (zsh_completion/"_aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "zsh")
+    (fish_completion/"aw.fish").write Utils.safe_popen_read("#{bin}/aw", "completion", "fish")
   end
 
   test do
