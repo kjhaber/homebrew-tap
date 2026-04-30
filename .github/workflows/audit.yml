@@ -1,0 +1,27 @@
+name: Audit Formulas
+
+on:
+  push:
+    paths:
+      - "Formula/*.rb"
+  pull_request:
+    paths:
+      - "Formula/*.rb"
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for shell_output in define_method blocks
+        run: |
+          # shell_output is not available inside define_method and causes
+          # "undefined method" errors at install time. Use Utils.safe_popen_read instead.
+          if grep -rn 'shell_output' Formula/*.rb; then
+            echo "ERROR: Found 'shell_output' in formula(s). Replace with Utils.safe_popen_read."
+            exit 1
+          fi
+
+      - name: brew style
+        run: brew style Formula/
