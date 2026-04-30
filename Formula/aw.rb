@@ -5,36 +5,55 @@
 class Aw < Formula
   desc "Monitor coding agents across tmux sessions"
   homepage "https://github.com/kjhaber/aw"
-  version "0.1.4"
+  version "0.1.5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_darwin_amd64.tar.gz"
-      sha256 "15a5db6cd81386974977d08f30b9f979dbcb1f76ea10aa47b27f41bcb41ae85d"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_darwin_amd64.tar.gz"
+      sha256 "344bbdfe64e20852d0eb0e6c0812a21404b2c1c1aaefa8701283f3bf4f28150b"
+
+      define_method(:install) do
+        bin.install "aw"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_darwin_arm64.tar.gz"
-      sha256 "50dc06d34518c794cb780f13ab66455613b3d3628a6d2fafb774dc0747fe88f8"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_darwin_arm64.tar.gz"
+      sha256 "2b8a03d78c66e89f547f6c24cb43fd69188ee4677f4406adc82b5fd5a1e550ce"
+
+      define_method(:install) do
+        bin.install "aw"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_linux_amd64.tar.gz"
-      sha256 "6aaf82a57f2815b02e89c582f4ee1232deb4072745e5661a06a49fda1dde7c7e"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_linux_amd64.tar.gz"
+      sha256 "87740320bb1356751ddb295cffa0dcd0f6f605ced03b3240e785f26a8e04da05"
+      define_method(:install) do
+        bin.install "aw"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.4/aw_0.1.4_linux_arm64.tar.gz"
-      sha256 "98022fb9a933c284ded34ac5db8975c4455bde431834db742684ea196ee1a45f"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_linux_arm64.tar.gz"
+      sha256 "ebdda6699dbcafa668e75e1e1b0cdf488796c34e28ed0363ccdb66721f0ca65f"
+      define_method(:install) do
+        bin.install "aw"
+        (bash_completion/"aw").write shell_output("#{bin}/aw completion bash")
+        (zsh_completion/"_aw").write shell_output("#{bin}/aw completion zsh")
+        (fish_completion/"aw.fish").write shell_output("#{bin}/aw completion fish")
+      end
     end
-  end
-
-  def install
-    bin.install "aw"
-    (bash_completion/"aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "bash")
-    (zsh_completion/"_aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "zsh")
-    (fish_completion/"aw.fish").write Utils.safe_popen_read("#{bin}/aw", "completion", "fish")
   end
 
   test do
