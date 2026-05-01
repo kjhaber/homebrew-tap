@@ -5,13 +5,13 @@
 class Aw < Formula
   desc "Monitor coding agents across tmux sessions"
   homepage "https://github.com/kjhaber/aw"
-  version "0.1.5"
+  version "0.1.6"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_darwin_amd64.tar.gz"
-      sha256 "344bbdfe64e20852d0eb0e6c0812a21404b2c1c1aaefa8701283f3bf4f28150b"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.6/aw_0.1.6_darwin_amd64.tar.gz"
+      sha256 "5eca48e94dfa6f2cd3d5772eed6bafd6ac7e3b73aa133079b1f667d864d3f43d"
 
       define_method(:install) do
         bin.install "aw"
@@ -21,8 +21,8 @@ class Aw < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_darwin_arm64.tar.gz"
-      sha256 "2b8a03d78c66e89f547f6c24cb43fd69188ee4677f4406adc82b5fd5a1e550ce"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.6/aw_0.1.6_darwin_arm64.tar.gz"
+      sha256 "99722883d3a9af1a8065734096fb81070b4c115dd849e146d6f7701cc3a3908e"
 
       define_method(:install) do
         bin.install "aw"
@@ -35,8 +35,8 @@ class Aw < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_linux_amd64.tar.gz"
-      sha256 "87740320bb1356751ddb295cffa0dcd0f6f605ced03b3240e785f26a8e04da05"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.6/aw_0.1.6_linux_amd64.tar.gz"
+      sha256 "c0f3818f4002f27e4c99a8d36ec318b528cba2bdfaa718123e78a292c23bb770"
       define_method(:install) do
         bin.install "aw"
         (bash_completion/"aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "bash")
@@ -45,8 +45,8 @@ class Aw < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/aw/releases/download/v0.1.5/aw_0.1.5_linux_arm64.tar.gz"
-      sha256 "ebdda6699dbcafa668e75e1e1b0cdf488796c34e28ed0363ccdb66721f0ca65f"
+      url "https://github.com/kjhaber/aw/releases/download/v0.1.6/aw_0.1.6_linux_arm64.tar.gz"
+      sha256 "6221da226b64abed92f9e2c5545457eb8f9d26ad24e2cec314853a77211254b5"
       define_method(:install) do
         bin.install "aw"
         (bash_completion/"aw").write Utils.safe_popen_read("#{bin}/aw", "completion", "bash")
