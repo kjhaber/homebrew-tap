@@ -5,13 +5,13 @@
 class Mpm < Formula
   desc "My Password Manager — encrypted secrets CLI/TUI"
   homepage "https://github.com/kjhaber/mpm"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kjhaber/mpm/releases/download/v0.1.0/mpm_0.1.0_darwin_amd64.tar.gz"
-      sha256 "81aa920cde6ff653e4ed1ca6cdca8433c3c47747975cd9a703b836eaa51d1d81"
+      url "https://github.com/kjhaber/mpm/releases/download/v0.1.1/mpm_0.1.1_darwin_amd64.tar.gz"
+      sha256 "2fa7ab03cb6c3d4df7b9e2a243a1fbdb701fd4b66233803cc581a9dc62ee50cf"
 
       define_method(:install) do
         bin.install "mpm"
@@ -21,8 +21,8 @@ class Mpm < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kjhaber/mpm/releases/download/v0.1.0/mpm_0.1.0_darwin_arm64.tar.gz"
-      sha256 "fecbd24603632246d0fb703b49e8ddc0fb75642966f83d09be312ba99666a4f3"
+      url "https://github.com/kjhaber/mpm/releases/download/v0.1.1/mpm_0.1.1_darwin_arm64.tar.gz"
+      sha256 "9a05048b451e8c75be77eecae483cf9dbc2ba35577f26916ec829037956cdb36"
 
       define_method(:install) do
         bin.install "mpm"
@@ -35,8 +35,8 @@ class Mpm < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/mpm/releases/download/v0.1.0/mpm_0.1.0_linux_amd64.tar.gz"
-      sha256 "2115271c126997e5252a9582cb28cac07d108d65182b967bacd518cce0438fee"
+      url "https://github.com/kjhaber/mpm/releases/download/v0.1.1/mpm_0.1.1_linux_amd64.tar.gz"
+      sha256 "936823d1519713f64aca4fedd03df6317d88e540efc68bf547c34c681a1e9012"
       define_method(:install) do
         bin.install "mpm"
         bash_completion.install "completions/mpm.bash"
@@ -45,8 +45,8 @@ class Mpm < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kjhaber/mpm/releases/download/v0.1.0/mpm_0.1.0_linux_arm64.tar.gz"
-      sha256 "6e178474c2abe3ab529abe99e098a70b649b66e8be01907789928e0add75d582"
+      url "https://github.com/kjhaber/mpm/releases/download/v0.1.1/mpm_0.1.1_linux_arm64.tar.gz"
+      sha256 "193c6a5f4e7f4531f19a295da77c9c9edf5c65cc5735b35be831617a0f930dc2"
       define_method(:install) do
         bin.install "mpm"
         bash_completion.install "completions/mpm.bash"
